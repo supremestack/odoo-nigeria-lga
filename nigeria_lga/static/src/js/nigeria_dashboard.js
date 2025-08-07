@@ -271,3 +271,6 @@ export class NigeriaLGADashboard extends Component {
         });
     }
 }
+
+// Register the dashboard
+registry.category("actions").add("nigeria_lga_dashboard", NigeriaLGADashboard);
