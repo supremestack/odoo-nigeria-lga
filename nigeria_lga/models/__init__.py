@@ -4,5 +4,4 @@
 
 from . import nigeria_state
 from . import nigeria_lga
-from . import nigeria_ward
 from . import res_partner
