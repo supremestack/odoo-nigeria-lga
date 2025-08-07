@@ -1,0 +1,211 @@
+<!-- nigeria_lga/views/nigeria_state_views.xml -->
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_nigeria_state_tree" model="ir.ui.view">
+        <field name="name">nigeria.state.tree</field>
+        <field name="model">nigeria.state</field>
+        <field name="arch" type="xml">
+            <tree string="Nigerian States" multi_edit="1" sample="1">
+                <field name="name" string="State"/>
+                <field name="code"/>
+                <field name="capital"/>
+                <field name="geopolitical_zone"/>
+                <field name="lga_count" string="LGAs"/>
+                <field name="population" optional="show"/>
+                <field name="governor_name" optional="hide"/>
+                <field name="active" widget="boolean_toggle" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_nigeria_state_form" model="ir.ui.view">
+        <field name="name">nigeria.state.form</field>
+        <field name="model">nigeria.state</field>
+        <field name="arch" type="xml">
+            <form string="Nigerian State">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_lgas" type="object" class="oe_stat_button" icon="fa-building-o">
+                            <field name="lga_count" widget="statinfo" string="LGAs"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="State Name"/>
+                        </h1>
+                        <h3>
+                            <field name="code" placeholder="State Code"/>
+                        </h3>
+                    </div>
+                    <group>
+                        <group string="Basic Information">
+                            <field name="capital"/>
+                            <field name="geopolitical_zone"/>
+                            <field name="country_state_id" options="{'no_create': True}"/>
+                            <field name="created_date"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                        <group string="Statistics">
+                            <field name="population"/>
+                            <field name="land_area"/>
+                            <field name="postal_code_range"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Government Officials">
+                            <field name="governor_name"/>
+                            <field name="deputy_governor_name"/>
+                        </group>
+                        <group string="Additional Information">
+                            <field name="motto"/>
+                            <field name="nickname"/>
+                            <field name="website" widget="url"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Local Government Areas" name="lgas">
+                            <field name="lga_ids" context="{'default_state_id': active_id}">
+                                <tree string="LGAs" editable="bottom">
+                                    <field name="name"/>
+                                    <field name="code"/>
+                                    <field name="headquarters"/>
+                                    <field name="population" optional="show"/>
+                                    <field name="ward_count" optional="show"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Kanban View -->
+    <record id="view_nigeria_state_kanban" model="ir.ui.view">
+        <field name="name">nigeria.state.kanban</field>
+        <field name="model">nigeria.state</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" sample="1">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="capital"/>
+                <field name="geopolitical_zone"/>
+                <field name="lga_count"/>
+                <field name="governor_name"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_record_top">
+                                <div class="o_kanban_record_headings">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name"/>
+                                        <span class="badge badge-secondary ms-2">
+                                            <field name="code"/>
+                                        </span>
+                                    </strong>
+                                </div>
+                            </div>
+                            <div class="o_kanban_record_body">
+                                <div class="text-muted">
+                                    <i class="fa fa-map-marker"/> <field name="capital"/>
+                                </div>
+                                <div>
+                                    <span class="badge badge-info">
+                                        <field name="geopolitical_zone"/>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="o_kanban_record_bottom">
+                                <div class="oe_kanban_bottom_left">
+                                    <span class="badge badge-pill badge-primary">
+                                        <field name="lga_count"/> LGAs
+                                    </span>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <field name="governor_name" widget="many2one_avatar_user"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_nigeria_state_search" model="ir.ui.view">
+        <field name="name">nigeria.state.search</field>
+        <field name="model">nigeria.state</field>
+        <field name="arch" type="xml">
+            <search string="Search Nigerian States">
+                <field name="name" string="State" filter_domain="['|', ('name', 'ilike', self), ('code', 'ilike', self)]"/>
+                <field name="capital"/>
+                <field name="governor_name"/>
+                <filter string="North Central" name="north_central" domain="[('geopolitical_zone', '=', 'north_central')]"/>
+                <filter string="North East" name="north_east" domain="[('geopolitical_zone', '=', 'north_east')]"/>
+                <filter string="North West" name="north_west" domain="[('geopolitical_zone', '=', 'north_west')]"/>
+                <filter string="South East" name="south_east" domain="[('geopolitical_zone', '=', 'south_east')]"/>
+                <filter string="South South" name="south_south" domain="[('geopolitical_zone', '=', 'south_south')]"/>
+                <filter string="South West" name="south_west" domain="[('geopolitical_zone', '=', 'south_west')]"/>
+                <separator/>
+                <filter string="Active" name="active" domain="[('active', '=', True)]"/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Geopolitical Zone" name="group_geopolitical_zone" domain="[]" context="{'group_by': 'geopolitical_zone'}"/>
+                    <filter string="Status" name="group_active" domain="[]" context="{'group_by': 'active'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Pivot View -->
+    <record id="view_nigeria_state_pivot" model="ir.ui.view">
+        <field name="name">nigeria.state.pivot</field>
+        <field name="model">nigeria.state</field>
+        <field name="arch" type="xml">
+            <pivot string="States Analysis" sample="1">
+                <field name="geopolitical_zone" type="row"/>
+                <field name="lga_count" type="measure"/>
+                <field name="population" type="measure"/>
+                <field name="land_area" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Graph View -->
+    <record id="view_nigeria_state_graph" model="ir.ui.view">
+        <field name="name">nigeria.state.graph</field>
+        <field name="model">nigeria.state</field>
+        <field name="arch" type="xml">
+            <graph string="States Statistics" sample="1">
+                <field name="geopolitical_zone"/>
+                <field name="lga_count" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_nigeria_state" model="ir.actions.act_window">
+        <field name="name">Nigerian States</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">nigeria.state</field>
+        <field name="view_mode">tree,kanban,form,pivot,graph</field>
+        <field name="search_view_id" ref="view_nigeria_state_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Nigerian State
+            </p>
+            <p>
+                Manage Nigerian states including the Federal Capital Territory (FCT).
+                Each state can have multiple Local Government Areas (LGAs).
+            </p>
+        </field>
+    </record>
