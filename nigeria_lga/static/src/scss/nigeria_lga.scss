@@ -1,0 +1,563 @@
+// nigeria_lga/static/src/scss/nigeria_lga.scss
+// Supreme Stack Nigeria LGA Module Styles
+// Copyright 2025 Supreme Stack
+
+// Variables
+$primary-color: #667eea;
+$secondary-color: #764ba2;
+$success-color: #2ecc71;
+$info-color: #3498db;
+$warning-color: #f39c12;
+$danger-color: #e74c3c;
+
+// Zone Colors
+$zone-colors: (
+    'north-central': #3498db,
+    'north-east': #9b59b6,
+    'north-west': #e74c3c,
+    'south-east': #f39c12,
+    'south-south': #2ecc71,
+    'south-west': #1abc9c
+);
+
+// Mixins
+@mixin card-shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease;
+    
+    &:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.08);
+    }
+}
+
+@mixin gradient-bg($color1: $primary-color, $color2: $secondary-color) {
+    background: linear-gradient(135deg, $color1 0%, $color2 100%);
+}
+
+// Dashboard Styles
+.o_nigeria_lga_dashboard {
+    min-height: 100vh;
+    background: #f5f7fa;
+    
+    // Header Section
+    .dashboard-header {
+        @include gradient-bg;
+        color: white;
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        
+        .dashboard-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            
+            i {
+                opacity: 0.9;
+            }
+        }
+        
+        .dashboard-subtitle {
+            font-size: 1rem;
+            opacity: 0.95;
+            margin-bottom: 0;
+        }
+        
+        .btn {
+            border-radius: 25px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+    
+    // Statistics Cards
+    .stat-card {
+        @include card-shadow;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        height: 100%;
+        
+        &:hover {
+            transform: translateY(-5px);
+            
+            .stat-card-footer {
+                background: rgba(0, 0, 0, 0.05);
+            }
+        }
+        
+        .stat-card-body {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            
+            .stat-icon {
+                width: 70px;
+                height: 70px;
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 1.5rem;
+                
+                &.states-icon {
+                    @include gradient-bg($primary-color, $secondary-color);
+                    color: white;
+                }
+                
+                &.lgas-icon {
+                    @include gradient-bg(#f093fb, #f5576c);
+                    color: white;
+                }
+                
+                &.zones-icon {
+                    @include gradient-bg(#4facfe, #00f2fe);
+                    color: white;
+                }
+            }
+            
+            .stat-details {
+                flex: 1;
+                
+                .stat-value {
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: #2c3e50;
+                    margin-bottom: 0.25rem;
+                    line-height: 1;
+                }
+                
+                .stat-label {
+                    font-size: 1rem;
+                    color: #7f8c8d;
+                    margin-bottom: 0.25rem;
+                    font-weight: 500;
+                }
+                
+                small {
+                    font-size: 0.85rem;
+                }
+            }
+        }
+        
+        .stat-card-footer {
+            padding: 0.75rem 1.5rem;
+            background: rgba(0, 0, 0, 0.02);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            transition: background 0.3s ease;
+            
+            span {
+                font-size: 0.9rem;
+                font-weight: 500;
+            }
+        }
+    }
+    
+    // Search Section
+    .search-section {
+        @include card-shadow;
+        border: none;
+        border-radius: 12px;
+        
+        .card-title {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .input-group {
+            .form-control {
+                border-radius: 25px 0 0 25px;
+                border: 2px solid #e0e6ed;
+                
+                &:focus {
+                    border-color: $primary-color;
+                    box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
+                }
+            }
+            
+            .btn:first-of-type {
+                border-radius: 0;
+            }
+            
+            .btn:last-child {
+                border-radius: 0 25px 25px 0;
+            }
+        }
+        
+        .search-results {
+            .list-group-item {
+                border-radius: 8px;
+                margin-bottom: 0.5rem;
+                border: 1px solid #e0e6ed;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    background: #f8f9fa;
+                    transform: translateX(5px);
+                }
+            }
+        }
+    }
+    
+    // Zones Section
+    .zones-section {
+        @include card-shadow;
+        border: none;
+        border-radius: 12px;
+        
+        .zone-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            border: 1px solid #e0e6ed;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+            
+            .zone-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+                
+                .zone-name {
+                    font-weight: 600;
+                    color: #2c3e50;
+                    margin-bottom: 0;
+                }
+            }
+            
+            .zone-stats {
+                .progress {
+                    background: #f0f3f7;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    
+                    .progress-bar {
+                        transition: width 0.6s ease;
+                    }
+                }
+            }
+        }
+    }
+    
+    // Charts
+    .chart-container {
+        position: relative;
+        width: 100%;
+        min-height: 300px;
+    }
+    
+    // Footer
+    .dashboard-footer {
+        margin-top: 3rem;
+        padding: 2rem 0;
+        background: white;
+        border-top: 1px solid #e0e6ed;
+        
+        a {
+            color: $primary-color;
+            text-decoration: none;
+            font-weight: 600;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// LGA Widget Styles
+.o_nigeria_lga_widget {
+    .form-label {
+        font-weight: 500;
+        color: #495057;
+        margin-bottom: 0.5rem;
+    }
+    
+    .form-select {
+        border-radius: 8px;
+        border: 1px solid #ced4da;
+        padding: 0.5rem 1rem;
+        transition: all 0.3s ease;
+        
+        &:focus {
+            border-color: $primary-color;
+            box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
+        }
+        
+        &:disabled {
+            background-color: #f8f9fa;
+            cursor: not-allowed;
+        }
+    }
+}
+
+// Map View Styles
+.o_nigeria_map_view {
+    background: white;
+    height: 100%;
+    
+    .map-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        
+        h4 {
+            margin-bottom: 0.5rem;
+        }
+    }
+    
+    .map-container {
+        position: relative;
+        background: #f8f9fa;
+        
+        svg {
+            width: 100%;
+            height: auto;
+            
+            .state-element {
+                cursor: pointer;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    opacity: 0.8;
+                    stroke-width: 3;
+                }
+            }
+        }
+    }
+    
+    .map-legend {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        
+        h6 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #495057;
+        }
+        
+        .legend-items {
+            .legend-item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 0.5rem;
+                font-size: 0.85rem;
+                
+                .legend-color {
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 3px;
+                    margin-right: 0.5rem;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+// Tooltip Styles
+.map-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    pointer-events: none;
+    z-index: 1000;
+    display: none;
+    
+    strong {
+        display: block;
+        margin-bottom: 0.25rem;
+        font-size: 0.95rem;
+    }
+}
+
+// List and Form View Enhancements
+.o_list_view {
+    .o_nigeria_lga_list {
+        .o_list_table {
+            thead {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                
+                th {
+                    color: white;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    font-size: 0.85rem;
+                    letter-spacing: 0.5px;
+                    border: none;
+                }
+            }
+            
+            tbody {
+                tr {
+                    transition: background 0.3s ease;
+                    
+                    &:hover {
+                        background: #f8f9fa;
+                    }
+                    
+                    td {
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Form View
+.o_form_view {
+    .o_nigeria_lga_form {
+        .oe_title {
+            h1 {
+                color: #2c3e50;
+                font-weight: 600;
+            }
+            
+            h3 {
+                color: #7f8c8d;
+                font-weight: 400;
+            }
+        }
+        
+        .o_group {
+            .o_field_widget {
+                &.o_field_many2one {
+                    .o_input {
+                        border-radius: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Kanban View
+.o_kanban_view {
+    .o_nigeria_lga_kanban {
+        .o_kanban_record {
+            border-radius: 12px;
+            border: 1px solid #e0e6ed;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+            
+            .badge {
+                &.badge-primary {
+                    background: $primary-color;
+                }
+                
+                &.badge-info {
+                    background: $info-color;
+                }
+                
+                &.badge-success {
+                    background: $success-color;
+                }
+            }
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+    .o_nigeria_lga_dashboard {
+        .dashboard-header {
+            .dashboard-title {
+                font-size: 1.5rem;
+            }
+        }
+        
+        .stat-card {
+            margin-bottom: 1rem;
+            
+            .stat-card-body {
+                .stat-icon {
+                    width: 50px;
+                    height: 50px;
+                }
+                
+                .stat-value {
+                    font-size: 2rem;
+                }
+            }
+        }
+        
+        .zones-section {
+            .zone-card {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+// Dark Mode Support (optional)
+@media (prefers-color-scheme: dark) {
+    .o_nigeria_lga_dashboard {
+        background: #1a1a2e;
+        
+        .stat-card,
+        .search-section,
+        .zones-section,
+        .card {
+            background: #16213e;
+            color: #e0e6ed;
+            
+            .stat-value,
+            .card-title,
+            .zone-name {
+                color: #e0e6ed;
+            }
+            
+            .stat-label,
+            .text-muted {
+                color: #94a3b8;
+            }
+        }
+    }
+}
+
+// Print Styles
+@media print {
+    .o_nigeria_lga_dashboard {
+        .dashboard-header {
+            background: none;
+            color: black;
+            
+            .btn {
+                display: none;
+            }
+        }
+        
+        .stat-card {
+            break-inside: avoid;
+            box-shadow: none;
+            border: 1px solid #dee2e6;
+        }
+    }
+}
