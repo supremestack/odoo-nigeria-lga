@@ -16,7 +16,6 @@ Key Features:
 * All 36 Nigerian states + Federal Capital Territory (FCT)
 * Complete 774 Local Government Areas (LGAs)
 * 6 Geopolitical zones classification
-* Ward management system
 * Integration with Odoo contacts
 * Modern responsive UI with dashboards
 * RESTful API endpoints
@@ -44,6 +43,7 @@ Enterprise Odoo Solutions for Africa
         'security/ir.model.access.csv',
         'views/nigeria_state_views.xml',
         'views/nigeria_lga_views.xml',
+        'views/res_partner_views.xml',
         'views/menu_views.xml',
     ],
     'assets': {
