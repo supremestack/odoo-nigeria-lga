@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_nigeria_root"
+              name="Nigeria LGA"
+              sequence="50"
+              groups="base.group_user"
+              web_icon="nigeria_lga,static/description/icon.png"/>
+
+    <!-- Configuration Menu -->
+    <menuitem id="menu_nigeria_config"
+              name="Configuration"
+              parent="menu_nigeria_root"
+              sequence="1"/>
+
+    <!-- States Menu -->
+    <menuitem id="menu_nigeria_states"
+              name="States"
+              parent="menu_nigeria_config"
+              action="action_nigeria_state"
+              sequence="10"/>
+
+    <!-- LGAs Menu -->
+    <menuitem id="menu_nigeria_lgas"
+              name="Local Government Areas"
+              parent="menu_nigeria_config"
+              action="action_nigeria_lga"
+              sequence="20"/>
+
+    <!-- Reports Menu -->
+    <menuitem id="menu_nigeria_reports"
+              name="Reports"
+              parent="menu_nigeria_root"
+              sequence="100"/>
+</odoo>
