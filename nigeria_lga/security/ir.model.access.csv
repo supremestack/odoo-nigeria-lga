@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_nigeria_state_user,nigeria.state.user,model_nigeria_state,base.group_user,1,0,0,0
+access_nigeria_state_manager,nigeria.state.manager,model_nigeria_state,base.group_system,1,1,1,1
+access_nigeria_lga_user,nigeria.lga.user,model_nigeria_lga,base.group_user,1,0,0,0
+access_nigeria_lga_manager,nigeria.lga.manager,model_nigeria_lga,base.group_system,1,1,1,1
+access_nigeria_ward_user,nigeria.ward.user,model_nigeria_ward,base.group_user,1,0,0,0
+access_nigeria_ward_manager,nigeria.ward.manager,model_nigeria_ward,base.group_system,1,1,1,1
