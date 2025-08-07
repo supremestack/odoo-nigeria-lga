@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Module Category -->
+        <record id="module_category_nigeria_lga" model="ir.module.category">
+            <field name="name">Nigeria LGA Management</field>
+            <field name="description">Manage Nigerian States and Local Government Areas</field>
+            <field name="sequence">16</field>
+        </record>
+
+        <!-- User Group -->
+        <record id="group_nigeria_lga_user" model="res.groups">
+            <field name="name">Nigeria LGA User</field>
+            <field name="category_id" ref="module_category_nigeria_lga"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Manager Group -->
+        <record id="group_nigeria_lga_manager" model="res.groups">
+            <field name="name">Nigeria LGA Manager</field>
+            <field name="category_id" ref="module_category_nigeria_lga"/>
+            <field name="implied_ids" eval="[(4, ref('group_nigeria_lga_user'))]"/>
+        </record>
+    </data>
+</odoo>
