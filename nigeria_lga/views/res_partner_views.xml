@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Extend Partner Form -->
+    <record id="view_partner_form_nigeria" model="ir.ui.view">
+        <field name="name">res.partner.form.nigeria</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state_id']" position="after">
+                <field name="nigeria_state_id" 
+                       placeholder="Nigerian State"
+                       attrs="{'invisible': [('country_id', '!=', %(base.ng)d)]}"
+                       options="{'no_create': True}"/>
+                <field name="nigeria_lga_id" 
+                       placeholder="Local Government Area"
+                       attrs="{'invisible': [('country_id', '!=', %(base.ng)d)]}"
+                       options="{'no_create': True}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
