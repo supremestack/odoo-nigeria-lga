@@ -20,11 +20,17 @@ class NigeriaLGA(models.Model):
     headquarters = fields.Char(string='Headquarters')
     
     chairman_name = fields.Char(string='Executive Chairman')
+    vice_chairman_name = fields.Char(string='Vice Chairman')
+    secretary_name = fields.Char(string='Secretary')
+    
     population = fields.Integer(string='Population')
     land_area = fields.Float(string='Land Area (km²)')
+    postal_codes = fields.Char(string='Postal Codes')
     
-    ward_ids = fields.One2many('nigeria.ward', 'lga_id', string='Wards')
-    ward_count = fields.Integer(string='Number of Wards', compute='_compute_ward_count', store=True)
+    phone = fields.Char(string='Phone')
+    email = fields.Char(string='Email')
+    website = fields.Char(string='Website')
+    address = fields.Text(string='Address')
     
     active = fields.Boolean(default=True)
     
@@ -41,7 +47,9 @@ class NigeriaLGA(models.Model):
             else:
                 lga.display_name = lga.name
     
-    @api.depends('ward_ids')
-    def _compute_ward_count(self):
+    def name_get(self):
+        result = []
         for lga in self:
-            lga.ward_count = len(lga.ward_ids)
+            name = f"{lga.name} ({lga.state_id.name})" if lga.state_id else lga.name
+            result.append((lga.id, name))
+        return result
