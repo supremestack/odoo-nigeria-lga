@@ -1,0 +1,90 @@
+# ===================================================================
+# nigeria_lga/wizards/import_lga_wizard_views.xml
+# ===================================================================
+
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Import Wizard Form View -->
+    <record id="view_import_lga_wizard_form" model="ir.ui.view">
+        <field name="name">import.lga.wizard.form</field>
+        <field name="model">import.lga.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Import Nigeria LGA Data">
+                <sheet>
+                    <group>
+                        <group string="File Selection">
+                            <field name="file_data" filename="file_name" required="1"/>
+                            <field name="file_name" invisible="1"/>
+                            <field name="delimiter"/>
+                        </group>
+                        <group string="Import Options">
+                            <field name="import_type"/>
+                            <field name="update_existing"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Instructions" name="instructions">
+                            <div class="alert alert-info" role="alert">
+                                <h4 class="alert-heading">CSV Format Guidelines</h4>
+                                <p><strong>For States:</strong></p>
+                                <ul>
+                                    <li>name: State name (required)</li>
+                                    <li>code: 3-letter state code (required)</li>
+                                    <li>capital: State capital (required)</li>
+                                    <li>zone: Geopolitical zone (north_central, north_east, north_west, south_east, south_south, south_west)</li>
+                                    <li>governor: Current governor name (optional)</li>
+                                    <li>deputy_governor: Deputy governor name (optional)</li>
+                                    <li>website: Official website (optional)</li>
+                                </ul>
+                                <p><strong>For LGAs:</strong></p>
+                                <ul>
+                                    <li>state_name or state_code: State identifier (required)</li>
+                                    <li>lga_name: LGA name (required)</li>
+                                    <li>lga_code: LGA code (optional)</li>
+                                    <li>headquarters: LGA headquarters (optional)</li>
+                                    <li>chairman: Chairman name (optional)</li>
+                                    <li>postal_codes: Postal codes (optional)</li>
+                                </ul>
+                            </div>
+                        </page>
+                        <page string="Sample Data" name="sample">
+                            <div class="alert alert-secondary" role="alert">
+                                <h5>Sample CSV for States:</h5>
+                                <pre>name,code,capital,zone,governor,deputy_governor,website
+Lagos,LAG,Ikeja,south_west,Governor Name,Deputy Name,https://lagosstate.gov.ng
+Kano,KAN,Kano,north_west,Governor Name,Deputy Name,https://kanostate.gov.ng</pre>
+                                
+                                <h5 class="mt-3">Sample CSV for LGAs:</h5>
+                                <pre>state_name,lga_name,lga_code,headquarters,chairman,postal_codes
+Lagos,Ikeja,LAG_IKJ,Ikeja,Chairman Name,100001
+Lagos,Surulere,LAG_SUR,Surulere,Chairman Name,100002</pre>
+                            </div>
+                        </page>
+                    </notebook>
+                </sheet>
+                <footer>
+                    <button name="action_import" type="object" string="Import" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Import Wizard Action -->
+    <record id="action_import_lga_wizard" model="ir.actions.act_window">
+        <field name="name">Import LGA Data</field>
+        <field name="res_model">import.lga.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_nigeria_state"/>
+        <field name="binding_view_types">list</field>
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="menu_import_lga"
+              name="Import Data"
+              parent="menu_nigeria_config"
+              action="action_import_lga_wizard"
+              sequence="100"/>
+</odoo>
+
