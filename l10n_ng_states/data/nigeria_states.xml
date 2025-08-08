@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- North Central -->
+    <record id="state_ng_benue" model="res.country.state"><field name="name">Benue</field><field name="code">BEN</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_kogi" model="res.country.state"><field name="name">Kogi</field><field name="code">KOG</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_kwara" model="res.country.state"><field name="name">Kwara</field><field name="code">KWR</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_nasarawa" model="res.country.state"><field name="name">Nasarawa</field><field name="code">NAS</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_niger" model="res.country.state"><field name="name">Niger</field><field name="code">NGR</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_plateau" model="res.country.state"><field name="name">Plateau</field><field name="code">PLT</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_fct" model="res.country.state"><field name="name">Federal Capital Territory</field><field name="code">FCT</field><field name="country_id" ref="base.ng"/></record>
+
+    <!-- North East -->
+    <record id="state_ng_adamawa" model="res.country.state"><field name="name">Adamawa</field><field name="code">ADM</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_bauchi" model="res.country.state"><field name="name">Bauchi</field><field name="code">BAU</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_borno" model="res.country.state"><field name="name">Borno</field><field name="code">BOR</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_gombe" model="res.country.state"><field name="name">Gombe</field><field name="code">GOM</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_taraba" model="res.country.state"><field name="name">Taraba</field><field name="code">TAR</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_yobe" model="res.country.state"><field name="name">Yobe</field><field name="code">YOB</field><field name="country_id" ref="base.ng"/></record>
+
+    <!-- North West -->
+    <record id="state_ng_jigawa" model="res.country.state"><field name="name">Jigawa</field><field name="code">JIG</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_kaduna" model="res.country.state"><field name="name">Kaduna</field><field name="code">KAD</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_kano" model="res.country.state"><field name="name">Kano</field><field name="code">KAN</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_katsina" model="res.country.state"><field name="name">Katsina</field><field name="code">KTS</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_kebbi" model="res.country.state"><field name="name">Kebbi</field><field name="code">KEB</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_sokoto" model="res.country.state"><field name="name">Sokoto</field><field name="code">SKT</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_zamfara" model="res.country.state"><field name="name">Zamfara</field><field name="code">ZAM</field><field name="country_id" ref="base.ng"/></record>
+
+    <!-- South East -->
+    <record id="state_ng_abia" model="res.country.state"><field name="name">Abia</field><field name="code">ABI</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_anambra" model="res.country.state"><field name="name">Anambra</field><field name="code">ANA</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_ebonyi" model="res.country.state"><field name="name">Ebonyi</field><field name="code">EBN</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_enugu" model="res.country.state"><field name="name">Enugu</field><field name="code">ENU</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_imo" model="res.country.state"><field name="name">Imo</field><field name="code">IMO</field><field name="country_id" ref="base.ng"/></record>
+
+    <!-- South South -->
+    <record id="state_ng_akwa_ibom" model="res.country.state"><field name="name">Akwa Ibom</field><field name="code">AKW</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_bayelsa" model="res.country.state"><field name="name">Bayelsa</field><field name="code">BAY</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_cross_river" model="res.country.state"><field name="name">Cross River</field><field name="code">CRS</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_delta" model="res.country.state"><field name="name">Delta</field><field name="code">DEL</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_edo" model="res.country.state"><field name="name">Edo</field><field name="code">EDO</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_rivers" model="res.country.state"><field name="name">Rivers</field><field name="code">RIV</field><field name="country_id" ref="base.ng"/></record>
+
+    <!-- South West -->
+    <record id="state_ng_ekiti" model="res.country.state"><field name="name">Ekiti</field><field name="code">EKT</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_lagos" model="res.country.state"><field name="name">Lagos</field><field name="code">LAG</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_ogun" model="res.country.state"><field name="name">Ogun</field><field name="code">OGN</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_ondo" model="res.country.state"><field name="name">Ondo</field><field name="code">OND</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_osun" model="res.country.state"><field name="name">Osun</field><field name="code">OSU</field><field name="country_id" ref="base.ng"/></record>
+    <record id="state_ng_oyo" model="res.country.state"><field name="name">Oyo</field><field name="code">OYO</field><field name="country_id" ref="base.ng"/></record>
+</odoo>
