@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2025 Supreme Stack
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl). -->
+<odoo noupdate="1">
+    <!-- Lagos State LGAs (20 LGAs) -->
+    
+    <record id="city_lagos_agege" model="res.city">
+        <field name="name">Agege</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">100283</field>
+    </record>
+    
+    <record id="city_lagos_ajeromi_ifelodun" model="res.city">
+        <field name="name">Ajeromi-Ifelodun</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">102103</field>
+    </record>
+    
+    <record id="city_lagos_alimosho" model="res.city">
+        <field name="name">Alimosho</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">100275</field>
+    </record>
+    
+    <record id="city_lagos_amuwo_odofin" model="res.city">
+        <field name="name">Amuwo-Odofin</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">102102</field>
+    </record>
+    
+    <record id="city_lagos_apapa" model="res.city">
+        <field name="name">Apapa</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">101245</field>
+    </record>
+    
+    <record id="city_lagos_badagry" model="res.city">
+        <field name="name">Badagry</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">103101</field>
+    </record>
+    
+    <record id="city_lagos_epe" model="res.city">
+        <field name="name">Epe</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">106101</field>
+    </record>
+    
+    <record id="city_lagos_eti_osa" model="res.city">
+        <field name="name">Eti-Osa</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">101011</field>
+    </record>
+    
+    <record id="city_lagos_ibeju_lekki" model="res.city">
+        <field name="name">Ibeju-Lekki</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">105101</field>
+    </record>
+    
+    <record id="city_lagos_ifako_ijaiye" model="res.city">
+        <field name="name">Ifako-Ijaiye</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">101232</field>
+    </record>
+    
+    <record id="city_lagos_ikeja" model="res.city">
+        <field name="name">Ikeja</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">100271</field>
+    </record>
+    
+    <record id="city_lagos_ikorodu" model="res.city">
+        <field name="name">Ikorodu</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">104101</field>
+    </record>
+    
+    <record id="city_lagos_kosofe" model="res.city">
+        <field name="name">Kosofe</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">100242</field>
+    </record>
+    
+    <record id="city_lagos_lagos_island" model="res.city">
+        <field name="name">Lagos Island</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">101001</field>
+    </record>
+    
+    <record id="city_lagos_lagos_mainland" model="res.city">
+        <field name="name">Lagos Mainland</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">101245</field>
+    </record>
+    
+    <record id="city_lagos_mushin" model="res.city">
+        <field name="name">Mushin</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">100253</field>
+    </record>
+    
+    <record id="city_lagos_ojo" model="res.city">
+        <field name="name">Ojo</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">102101</field>
+    </record>
+    
+    <record id="city_lagos_oshodi_isolo" model="res.city">
+        <field name="name">Oshodi-Isolo</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">100261</field>
+    </record>
+    
+    <record id="city_lagos_shomolu" model="res.city">
+        <field name="name">Shomolu</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">100252</field>
+    </record>
+    
+    <record id="city_lagos_surulere" model="res.city">
+        <field name="name">Surulere</field>
+        <field name="state_id" ref="state_ng_lagos"/>
+        <field name="country_id" ref="base.ng"/>
+        <field name="zipcode">101283</field>
+    </record>
+</odoo>
